@@ -1,8 +1,4 @@
-./FirstVersion/__pycache__
-./SecondVersion/__pycache__
-./ThirdVersion/__pycache__
-./FourthVersion/__pycache__
-./FirstVersion/__pycache__/*
-./SecondVersion/__pycache__/*
-./ThirdVersion/__pycache__/*
-./FourthVersion/__pycache__/*
+FirstVersion/__pycache__
+SecondVersion/__pycache__
+ThirdVersion/__pycache__
+FourthVersion/__pycache__
