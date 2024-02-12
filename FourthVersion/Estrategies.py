@@ -75,8 +75,8 @@ def Clock(iteration: int, own_list: list, other_list: list):
 
 ## GLOBALS
 
-#estrategies = [('Dumb',Dumb), ('TitForTat', TitForTat), ('Friedman',Friedman), ('Random',Random),('Joss',Joss), ('Sample',Sample),('Tester',Tester), ('Devil',Devil),('Clock',Clock)]
-estrategies = [('TitForTat', TitForTat),('Devil',Devil)]
+estrategies = [('Dumb',Dumb), ('TitForTat', TitForTat), ('Friedman',Friedman), ('Random',Random),('Joss',Joss), ('Sample',Sample),('Tester',Tester), ('Devil',Devil),('Clock',Clock)]
+#estrategies = [('TitForTat', TitForTat),('Devil',Devil)]
 
 
 estrategies_score = {'Dumb':0, 'TitForTat':0, 'Devil':0, 'Joss':0,'Random':0, 'Friedman':0, 'Sample':0, 'Tester':0, 'Clock':0}

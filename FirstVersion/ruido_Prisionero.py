@@ -2,7 +2,7 @@
 import os
 import sys
 import random
-from Prisioner import Prisioner
+from Prisoner import Prisoner
 from Negotiation import Negotiation
 import Estrategies
 from Estrategies import estrategies, estrategies_score
@@ -18,8 +18,8 @@ def main():
             prio1_args = Estrategies.estrategies[int1]
             prio2_args = Estrategies.estrategies[int2]
 
-            prio1 = Prisioner(prio1_args[0],prio1_args[1])
-            prio2 = Prisioner(prio2_args[0],prio2_args[1])
+            prio1 = Prisoner(prio1_args[0],prio1_args[1])
+            prio2 = Prisoner(prio2_args[0],prio2_args[1])
             nego = Negotiation(prio1,prio2, iterations=200)
             nego.start()
 
@@ -27,7 +27,7 @@ def main():
     print('\n')
 
     for estr in Estrategies.estrategies_score:
-        print(f'Prisioner {estr} - FINAL SCORE: {Estrategies.estrategies_score[estr]}')
+        print(f'Prisoner {estr} - FINAL SCORE: {Estrategies.estrategies_score[estr]}')
 
     final_list = list(Estrategies.estrategies_score.items())
 

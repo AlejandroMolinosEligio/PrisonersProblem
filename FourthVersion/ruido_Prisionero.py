@@ -2,7 +2,7 @@
 import os
 import sys
 import random
-from Prisioner import Prisioner
+from Prisoner import Prisoner
 from Negotiation import Negotiation
 import Estrategies
 from Estrategies import estrategies, estrategies_score
@@ -23,12 +23,12 @@ def uniform_cross(population,size):
     for _ in range(size):
         if 0.1>random.random():
             item = Estrategies.estrategies[random.randint(0,len(Estrategies.estrategies)-1)]
-            population.append(Prisioner(item[0],item[1]))
+            population.append(Prisoner(item[0],item[1]))
 
         else:
             estr = fathers[random.randint(0,len(fathers)-1)]
             item = Estrategies.estrategies[estrs.index(estr)]
-            population.append(Prisioner(item[0],item[1]))
+            population.append(Prisoner(item[0],item[1]))
     
     return population
 
@@ -64,7 +64,7 @@ def roullete(population,childs):
             if prob<=p:
                 index = estrategias_list.index(name)
                 item = Estrategies.estrategies[index]
-                population_aux.append(Prisioner(item[0],item[1]))
+                population_aux.append(Prisoner(item[0],item[1]))
                 break
 
     population_aux = childs(population_aux,len(population)-len(population_aux))  
@@ -96,7 +96,7 @@ def elitism(population,childs):
 
     for _ in range(len(population)-len(new_population)):
         item = all_estrs.index(estrs[random.randint(0,len(estrs)-1)])
-        new_population.append(Prisioner(Estrategies.estrategies[item][0],Estrategies.estrategies[item][1]))
+        new_population.append(Prisoner(Estrategies.estrategies[item][0],Estrategies.estrategies[item][1]))
 
     return new_population
 
@@ -131,7 +131,7 @@ def generate_initial_population():
     general_percent = math.floor(population_num/len(Estrategies.estrategies))
 
     for item in Estrategies.estrategies:
-        population += [Prisioner(item[0],item[1]) for _ in range(general_percent)]
+        population += [Prisoner(item[0],item[1]) for _ in range(general_percent)]
     
     if len(population)<population_num:
         population += [population[-1]] * (population_num-len(population))

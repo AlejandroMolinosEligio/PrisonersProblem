@@ -1,12 +1,12 @@
 
-from Prisioner import Prisioner
+from Prisoner import Prisoner
 import random
 import Estrategies
 from Estrategies import estrategies, estrategies_score
 
 class Negotiation():
 
-    def __init__(self,prio1: Prisioner, prio2: Prisioner, prio1_values: list =[], prio2_values: list =[],prio1_score: int=0, prio2_score:int=0, iterations: int=0):
+    def __init__(self,prio1: Prisoner, prio2: Prisoner, prio1_values: list =[], prio2_values: list =[],prio1_score: int=0, prio2_score:int=0, iterations: int=0):
         self.prio1 = prio1
         self.prio2 = prio2
         self.prio1_values = prio1_values
@@ -37,8 +37,8 @@ class Negotiation():
 
         if verbose:
 
-            print(f'Prisioner {self.prio1.name} score: {self.prio1_score}')
-            print(f'Prisioner {self.prio2.name} score: {self.prio2_score}')
+            print(f'Prisoner {self.prio1.name} score: {self.prio1_score}')
+            print(f'Prisoner {self.prio2.name} score: {self.prio2_score}')
 
             print(f'Max score {self.iterations*5} - Min score {str(0)}')
 

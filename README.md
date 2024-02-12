@@ -68,7 +68,7 @@ del oponente es no cooperar comenzará a actuar como TitFotTat, en caso contrari
 
 ## Clases
 
-### Prisioner
+### Prisoner
 
 Está clase en su versión final consta de 3 atributos:
 

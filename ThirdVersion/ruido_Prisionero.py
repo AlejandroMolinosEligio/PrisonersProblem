@@ -2,7 +2,7 @@
 import os
 import sys
 import random
-from Prisioner import Prisioner
+from Prisoner import Prisoner
 from Negotiation import Negotiation
 import Estrategies
 from Estrategies import estrategies, estrategies_score
@@ -19,7 +19,7 @@ def generate_initial_population():
     general_percent = math.floor(population_num/len(Estrategies.estrategies))
 
     for item in Estrategies.estrategies:
-        population += [Prisioner(item[0],item[1]) for _ in range(general_percent)]
+        population += [Prisoner(item[0],item[1]) for _ in range(general_percent)]
     
     if len(population)<population_num:
         population += [population[-1]] * (population_num-len(population))
@@ -51,7 +51,7 @@ def generate_population(population):
     new_population = []
     for i in range(num_popula-10):
         item = Estrategies.estrategies[random.randint(0,len(Estrategies.estrategies)-1)]
-        new_population.append(Prisioner(item[0],item[1]))
+        new_population.append(Prisoner(item[0],item[1]))
 
     new_population += best[:10]
 

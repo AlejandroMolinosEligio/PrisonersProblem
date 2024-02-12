@@ -1,6 +1,6 @@
-## CLASS PRISIONER
+## CLASS Prisoner
 
-class Prisioner():
+class Prisoner():
 
     def __init__(self, name: str, func):
         self.estrategy = func
