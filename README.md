@@ -105,11 +105,28 @@ Estas dos versiones son similares, la única diferencia entre ellos principal es
 
 ## Third version
 
-Esta es la versión más compleja hasta el momento, estableciendo el marco esta versión crea una población inicial de (5 * total de estrategias). Mediante esto se establece una población inicial con el mismo número de Prisioneros con la misma estrategia de forma igualitaria. A su vez, cada uno de los prisioneros interactua con cada uno de los otros y una copia de sí mismo con un total de 200 acciones al igual que las versiones anteriores, pero dado que esta vez hay más de un tipo evaluaremos la puntuacion de cada uno de forma individual a fin de crear nuevas generaciones. Estas generaciones están conformadas por los 10 mejores individuos de la generación anterior y el resto se generan nuevos de forma aletoria. Esto se repite un total de 1000 generaciones y al final nos quedamos con la mejor de todas ellas.
+Esta es una versión más compleja, estableciendo el marco esta versión crea una población inicial de (5 * total de estrategias). Mediante esto se establece una población inicial con el mismo número de Prisioneros con la misma estrategia de forma igualitaria. A su vez, cada uno de los prisioneros interactua con cada uno de los otros y una copia de sí mismo con un total de 200 acciones al igual que las versiones anteriores, pero dado que esta vez hay más de un tipo evaluaremos la puntuacion de cada uno de forma individual a fin de crear nuevas generaciones. Estas generaciones están conformadas por los 10 mejores individuos de la generación anterior y el resto se generan nuevos de forma aletoria. Esto se repite un total de 1000 generaciones y al final nos quedamos con la mejor de todas ellas.
 
 ![Third](https://github.com/AlejandroMolinosEligio/PrisonersProblem/blob/main/Photos/Third.png?raw=true)
 
 ## Fourth version
 
-MEJORAR ALGORITMO GENÉTICO
+En esta versión del estudio he optado por la creación de algoritmos genéticos. La población inicial es de (6 * total de estrategias), a su vez exiten un total de 1000 generaciones y al igual que en versiones anteriores un total de 200 acciones por negociación. 
 
+Para la creación del algoritmo genético, dada la naturaleza del mismo problema solo he implementeado algunos métodos para la creación de padres e hijos. Para la selección de padres hay un total de 4 métodos, estos son:
+
+-   **Roullete:** Este método escoge los padres en función del valor porcentual asociado a cada estrategia y se generan individuos con mayor o menor probabilidad en función de este mismo valor.
+
+-   **Ranking:** Este método escoge los mejores N individuos de una población y el resto serán los hijos de estos mismos.
+
+-   **Elistism:** Este método se basa en realizar reproducciones parciales, es decir, que los individuos con mejor fitness tengan una descendencia que sea exactamente igual que ellos.
+
+-   **Pairs:** En este método se crean parejas de forma aleatoria y de cada pareja se seleccionará aquel que tenga mejor fitness.
+
+En cuanto a los métodos para la creación de hijos solo he implementado uno que es:
+
+-   **Uniform cross:** Se crea un hijo como una selección aleatoria de los valores de los padres, en este caso las estrategias.
+
+Para mejorarlo más he implementado que en la creación de hijos de los métodos que lo utilicen exista una componente de aleatoriedad para que se puedan seguir generando individuos que ya hayan sido extintos. 
+
+![Fourth](https://github.com/AlejandroMolinosEligio/PrisonersProblem/blob/main/Photos/Third.png?raw=true)
