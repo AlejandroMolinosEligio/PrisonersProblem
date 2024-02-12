@@ -189,7 +189,7 @@ def main():
                 nego = Negotiation(prio1,prio2, iterations=200)
                 nego.start()
 
-        population,population_estrategy_num,total = generate_population(population,fathers=pairs, childs=uniform_cross)
+        population,population_estrategy_num,total = generate_population(population,fathers=elitism, childs=uniform_cross)
 
         if gen%50==0:
             final = [(item[0],Estrategies.estrategies_score[item[0]]/total) for item in Estrategies.estrategies]

@@ -65,10 +65,6 @@ def generate_population(population):
 def main():
 
     gen_number = 1000
-    
-#    population = [Estrategies.estrategies[0]] * 4 + [Estrategies.estrategies[1]] * 6 + [Estrategies.estrategies[2]] * 5
-
-#    population_estrategy_num = [('TitForTat',4),('Devil',6),('Joss',5)]
 
     population,population_estrategy_num = generate_initial_population()
 

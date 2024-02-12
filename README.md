@@ -130,3 +130,60 @@ En cuanto a los métodos para la creación de hijos solo he implementado uno que
 Para mejorarlo más he implementado que en la creación de hijos de los métodos que lo utilicen exista una componente de aleatoriedad para que se puedan seguir generando individuos que ya hayan sido extintos. 
 
 ![Fourth](https://github.com/AlejandroMolinosEligio/PrisonersProblem/blob/main/Photos/Third.png?raw=true)
+
+## Conclusiones
+
+Como estudio preeliminar podemos decir lo siguiente. Teniendo en cuenta las métricas que se tienen para la evaluación de las remcompensas en un entorno en el que solo hubiera una única opción, la acción con mayor tasa ganadora sería no cooperar. La acción de no cooperar puede tener dos posibles futuros, que el oponente no coopere y ambos ganen 1 punto, o que el oponente coopere que en ese caso el primero ganaría 5 puntos. En cualquiera de los dos casos los posibles escenarios son el empate o la victoria, así que la mejor opción simepre será no cooperar. Pero esto solo sería aplicable en el caso de que hubiera una única acción pero para el caso que estamos tratando he querido hacer una simulación de un entorno real en el que no existe una única acción en cada negociación. Partiendo de esta premisa el caso anterior de escoger siempre no cooperar no será la opción ganadora.
+
+### First version
+
+Esta primera versión partía de 7 estrategias, estas son Dumb, TitForTat, Devil, Joss, Random, Friedman y Sample. Con un total de 200 acciones por cada negociación. Si ejecutamos el entorno simulado podemos ver que el ganador dependiendo de la ejecucución es Sample o TitFotTat. 
+
+![FirstVersion](https://github.com/AlejandroMolinosEligio/PrisonersProblem/blob/main/Photos/1.png?raw=true)
+
+Podemos ver que aquellas estrategias que tienen mejor puntuación son aquellas que podríamos considerar "buenas" y aquellas que tienen peor puntuación son las "malas" que las categorizaremos como aquellas que en primera instacia no cooperan o mayoritariamente no cooperan.
+
+### Second version
+
+Esta versión la cree a fin de introduccir mejores estrategias y modificando en general las estrategias establecidas. La principal añadida fue una variante de una de las estrategias ganadoras anteriroes TitFotTat. Esta estrategia llamada Tester partía de la no cooperación y después de la cooperación, esta a su vez comprueba si el oponente respondió como segunda acción cooperar ante la primera no cooperación de la estrategia. Si esto es así la estrategia seguirá coomportandose como su antecesor TitFotTat, en caso contrario comenzará a cooperar y no cooperar de forma alterna.
+
+![SecondVersion](https://github.com/AlejandroMolinosEligio/PrisonersProblem/blob/main/Photos/2.png?raw=true)
+
+Como podemos ver, pese a que este sea un predecesor de una estrategia anterior que tuvo una buena puntuación esta no ha tenido los mismos resultados. Dado que también se ha modificado la población inicial podemos ver que se han modificado también las estrategias ganadoras y ahora la encabeza Friedman y TitFotTat.
+
+### Third version 
+
+Esta versión es un preeludio de la futura implementación del algoritmo genético, en este comenzamos con el escenario anterior con la diferenciación de que ahora la población se irá modificando generacionalmente. Las generaciones posteriores costarán de los 10 mejores individuos de la población anterior y el resto se generan de forma aleatoria de entre todas las estrategias disponibles. Después de 450 generaciones los valores suelen quedar estables y como podemos ver en la siguiente imagen vuelven a ganar las estrategias "buenas" y las "malas" tienden a disminuir.
+
+![ThirdVersion](https://github.com/AlejandroMolinosEligio/PrisonersProblem/blob/main/Photos/3.png?raw=true)
+
+### Fourth version
+
+Esta es la última implementación en la que he creado un algortimo genético con todos los métodos expuestos anteirormente. Tras la ejecución de estos podemos ver lo siguiente:
+
+- **Pairs:**
+
+![ThirdVersion](https://github.com/AlejandroMolinosEligio/PrisonersProblem/blob/main/Photos/pairs.png?raw=true)
+
+- **Roullete:**
+
+![ThirdVersion](https://github.com/AlejandroMolinosEligio/PrisonersProblem/blob/main/Photos/roullete.png?raw=true)
+
+- **Ranking:**
+
+![ThirdVersion](https://github.com/AlejandroMolinosEligio/PrisonersProblem/blob/main/Photos/ranking.png?raw=true)
+
+- **Elitism:**
+
+![ThirdVersion](https://github.com/AlejandroMolinosEligio/PrisonersProblem/blob/main/Photos/elitism.png?raw=true)
+
+
+Como podemos ver en todos los escenarios vemos que aquellas estrategias ganadoras son las "buenas" y las "malas" tienden a la extinción. Generacionalmente podemos ver que estas últimas pueden verse incrementadas en un pico al principio de las generaciones pero a medida que estas van creciendo tienden a desaparecer.
+
+### Caso especial 
+
+A modo de estudio me pareció interesante ver como se comportaría una población en la que mayoritariamente habitan individuos "malos" y solo existe un grupo reducido de buenos. Este fue el resultado:
+
+![Test](https://github.com/AlejandroMolinosEligio/PrisonersProblem/blob/main/Photos/test.png?raw=true)
+
+Pese a que solo había dos únicos individuos "buenos" estos tienden a absorber al resto de la población "mala", lo que nos da a entender que por norma general como hemos podido ver en todas las simulaciones este patrón se repite y podemos concluir que esto se aplica a cualquiera de los niveles.
