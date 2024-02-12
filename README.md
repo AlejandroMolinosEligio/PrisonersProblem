@@ -184,7 +184,7 @@ Como podemos ver en todos los escenarios vemos que aquellas estrategias ganadora
 
 ### Caso especial 
 
-A modo de estudio me pareció interesante ver como se comportaría una población en la que mayoritariamente habitan individuos "malos" y solo existe un grupo reducido de buenos. Este fue el resultado:
+A modo de estudio me pareció interesante ver como se comportaría una población en la que mayoritariamente habitan individuos "malos" y solo existe un grupo reducido de buenos. Para la ejecución de este experimento he escogido la creación de padres por el método de **pairs** y la creación de hijos por **uniform_cross**. Este fue el resultado:
 
 ![Test](https://github.com/AlejandroMolinosEligio/PrisonersProblem/blob/main/Photos/Test.png?raw=true)
 
