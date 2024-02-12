@@ -131,6 +131,8 @@ Para mejorarlo más he implementado que en la creación de hijos de los métodos
 
 ![Fourth](https://github.com/AlejandroMolinosEligio/PrisonersProblem/blob/main/Photos/Third.png?raw=true)
 
+Las ejecuciones de todas estas versiones se hace a través del archivo **ruido_Prisionero.py** y para añadir a modificar las estrategias existentes se debe modificar el archivo **Estrategies.py**. 
+
 ## Conclusiones
 
 Como estudio preeliminar podemos decir lo siguiente. Teniendo en cuenta las métricas que se tienen para la evaluación de las remcompensas en un entorno en el que solo hubiera una única opción, la acción con mayor tasa ganadora sería no cooperar. La acción de no cooperar puede tener dos posibles futuros, que el oponente no coopere y ambos ganen 1 punto, o que el oponente coopere que en ese caso el primero ganaría 5 puntos. En cualquiera de los dos casos los posibles escenarios son el empate o la victoria, así que la mejor opción simepre será no cooperar. Pero esto solo sería aplicable en el caso de que hubiera una única acción pero para el caso que estamos tratando he querido hacer una simulación de un entorno real en el que no existe una única acción en cada negociación. Partiendo de esta premisa el caso anterior de escoger siempre no cooperar no será la opción ganadora.
@@ -184,6 +186,6 @@ Como podemos ver en todos los escenarios vemos que aquellas estrategias ganadora
 
 A modo de estudio me pareció interesante ver como se comportaría una población en la que mayoritariamente habitan individuos "malos" y solo existe un grupo reducido de buenos. Este fue el resultado:
 
-![Test](https://github.com/AlejandroMolinosEligio/PrisonersProblem/blob/main/Photos/test.png?raw=true)
+![Test](https://github.com/AlejandroMolinosEligio/PrisonersProblem/blob/main/Photos/Test.png?raw=true)
 
 Pese a que solo había dos únicos individuos "buenos" estos tienden a absorber al resto de la población "mala", lo que nos da a entender que por norma general como hemos podido ver en todas las simulaciones este patrón se repite y podemos concluir que esto se aplica a cualquiera de los niveles.
