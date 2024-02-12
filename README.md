@@ -20,7 +20,6 @@ Para simplificarlo tenemos el siguiente sistema de recompensas en función de si
 
 ![Recompensas](https://github.com/AlejandroMolinosEligio/PrisonersProblem/blob/main/Photos/Recompensas.png?raw=true)
 
-Prsionero 2 | Prisionero 1
 
 ## Estrategias y individuos
 
